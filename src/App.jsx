@@ -33,7 +33,7 @@ const TIMELINE = [
     year: "2022 - 2026",
     role: "B.S. Computer Science",
     company: "University of Michigan",
-    description: "Focusing on Machine Learning and Artificial Intelligence. Conducting research in computer vision and deep learning.",
+    description: "Focusing on Machine Learning and Artificial Intelligence. Conducted music AI research with Professor Herman Dong, which led to founding Rubin.",
     icon: <GraduationCap size={16} />,
     logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Seal_of_the_University_of_Michigan.svg"
   },

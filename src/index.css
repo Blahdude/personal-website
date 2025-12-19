@@ -1146,8 +1146,17 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
+  .music-player-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .music-player-title {
-    font-size: 36px;
+    font-size: 32px;
+  }
+  
+  .music-player-description {
+    font-size: 14px;
   }
 
   .track-list-header {
@@ -1155,9 +1164,10 @@ footer a:hover {
   }
 
   .track-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    flex-direction: row; /* Keep row for cleaner list */
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
   }
 
   .track-number,
@@ -1165,49 +1175,79 @@ footer a:hover {
     display: none;
   }
   
-  /* Keep duration visible but small */
+  .track-info {
+    flex: 1;
+    min-width: 0; /* Enable truncation */
+  }
+  
+  /* Keep duration visible */
   .track-duration {
     display: block;
     font-size: 11px;
     flex: 0 0 auto;
+    text-align: right;
   }
 
-  .player-controls {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 12px 16px; /* Reduced padding */
-    bottom: 0;
+  /* Player Controls - Mobile Layout */
+  /* Using display: contents to unwrap player-center and use parent grid */
+  .player-center {
+    display: contents;
   }
   
-  /* Make controls more compact on mobile */
+  .player-controls {
+    display: grid;
+    grid-template-areas:
+      "progress"
+      "info"
+      "controls";
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 20px 32px; /* Extra bottom padding for safe area */
+    height: auto;
+  }
+  
+  .progress-container {
+    grid-area: progress;
+    width: 100%;
+    margin-bottom: 4px;
+    order: unset; /* Reset from previous overrides if any */
+  }
+  
+  .current-track-info {
+    grid-area: info;
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 0 4px;
+  }
+  
+  .main-controls {
+    grid-area: controls;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 16px;
+    order: unset;
+  }
+  
+  /* Hide volume on mobile - use hardware buttons */
+  .volume-control {
+    display: none;
+  }
+  
+  /* Larger touch targets */
   .control-btn {
-    width: 28px;
-    height: 28px;
+    width: 40px;
+    height: 40px;
   }
   
   .play-pause-btn {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
   }
-
-  .current-track-info {
-    text-align: center;
-  }
-
-  .player-center {
-    order: -1;
-  }
-
-  .volume-control {
-    justify-content: center;
-  }
-
-  .volume-slider {
-    width: 80px;
-  }
-
+  
   .shuffle-btn-top {
-    padding: 16px 32px;
+    width: 100%;
+    padding: 16px;
     font-size: 16px;
   }
 }
