@@ -435,8 +435,9 @@ function App() {
               </div>
               
               <div className="timeline-right">
-                <div className="timeline-content">
-                  <div className="timeline-role">{item.role}</div>
+              <div className="timeline-content">
+                <div className="timeline-date-mobile">{item.year}</div>
+                <div className="timeline-role">{item.role}</div>
                   <div className="timeline-company">{item.company}</div>
                   <div className="timeline-description">{item.description}</div>
                   {item.link && (

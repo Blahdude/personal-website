@@ -88,6 +88,13 @@ body {
   gap: 60px;
 }
 
+@media (max-width: 768px) {
+  .app-container {
+    padding: 24px 16px 80px;
+    gap: 40px;
+  }
+}
+
 /* --- Top Navigation Header --- */
 .site-header {
   position: sticky;
@@ -110,6 +117,28 @@ body {
   box-shadow: var(--shadow-sm);
   max-width: fit-content;
   margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .site-header-inner {
+    max-width: 100%;
+    margin: 0 16px;
+    padding: 12px 16px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 16px;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .site-header-inner::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .nav-right {
+    margin-left: auto; /* Push to right if space permits, or stays in flow */
+  }
 }
 
 .nav-left {
@@ -257,6 +286,12 @@ body {
   font-style: normal; /* Not italic for Fraunces usually */
 }
 
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 32px;
+  }
+}
+
 .hero-roles {
   font-family: var(--font-sans);
   font-size: 15px;
@@ -371,6 +406,14 @@ body {
   min-height: 120px;
 }
 
+.timeline-date-mobile {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-primary);
+  margin-bottom: 4px;
+}
+
 /* Mobile responsive for timeline */
 @media (max-width: 768px) {
   .timeline-item {
@@ -382,6 +425,10 @@ body {
 
   .timeline-left {
     display: none; /* Hide date on side on mobile, put inside */
+  }
+  
+  .timeline-date-mobile {
+    display: block;
   }
 
   .timeline-center {
@@ -1114,15 +1161,33 @@ footer a:hover {
   }
 
   .track-number,
-  .track-bpm,
-  .track-duration {
+  .track-bpm {
     display: none;
+  }
+  
+  /* Keep duration visible but small */
+  .track-duration {
+    display: block;
+    font-size: 11px;
+    flex: 0 0 auto;
   }
 
   .player-controls {
     grid-template-columns: 1fr;
     gap: 12px;
-    padding: 16px;
+    padding: 12px 16px; /* Reduced padding */
+    bottom: 0;
+  }
+  
+  /* Make controls more compact on mobile */
+  .control-btn {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .play-pause-btn {
+    width: 32px;
+    height: 32px;
   }
 
   .current-track-info {
