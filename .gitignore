@@ -24,3 +24,4 @@ npm-debug.log*
 # Audio files - excluded from git but deployed via vercel --prod
 public/beats/
 beats/
+.vercel
