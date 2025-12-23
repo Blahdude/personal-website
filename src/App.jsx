@@ -176,7 +176,13 @@ function App() {
 
   if (showMusicPlayer) {
     return (
-      <div className="app-container">
+      <>
+        <div className="background-blend">
+          <div className="background-image bg-rooster-1" />
+          <div className="background-image bg-rooster-2" />
+          <div className="background-image bg-rooster-3" />
+        </div>
+        <div className="app-container">
         <nav className="site-header">
           <div className="site-header-inner">
              <div className="nav-left">
@@ -235,13 +241,20 @@ function App() {
             <a href="https://www.linkedin.com/in/olivercamp/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn</a>
           </div>
         </footer>
-      </div>
+        </div>
+      </>
     )
   }
 
   if (activeArticle && ARTICLES[activeArticle]) {
     return (
-      <div className="app-container">
+      <>
+        <div className="background-blend">
+          <div className="background-image bg-rooster-1" />
+          <div className="background-image bg-rooster-2" />
+          <div className="background-image bg-rooster-3" />
+        </div>
+        <div className="app-container">
         <nav className="nav-dock">
           <div className="nav-dock-inner">
              <div className="nav-item" onClick={() => setActiveArticle(null)}>
@@ -265,14 +278,23 @@ function App() {
             <a href="https://www.linkedin.com/in/olivercamp/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn</a>
           </div>
         </footer>
-      </div>
+        </div>
+      </>
     )
   }
 
   return (
-    <div className="app-container">
-      {/* Top Navigation Bar */}
-      <nav className="site-header">
+    <>
+      {/* Background with blurred rooster images */}
+      <div className="background-blend">
+        <div className="background-image bg-rooster-1" />
+        <div className="background-image bg-rooster-2" />
+        <div className="background-image bg-rooster-3" />
+      </div>
+      
+      <div className="app-container">
+        {/* Top Navigation Bar */}
+        <nav className="site-header">
         <div className="site-header-inner">
            <div className="nav-left">
               <div 
@@ -512,7 +534,8 @@ function App() {
           <a href="https://www.linkedin.com/in/olivercamp/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn</a>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   )
 }
 
