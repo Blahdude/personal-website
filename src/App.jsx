@@ -40,7 +40,7 @@ const ARTICLES = {
     },
     'reflections': {
         title: "Reflections on AI and Music Creation",
-        date: "Coming Soon",
+        date: "December 2024",
         content: `
 
     `
@@ -298,9 +298,9 @@ function App() {
                                 The future of Music AI.
                             </div>
                         </div>
-                        <a href="https://rubin-chat.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-action secondary">
-                            Try it out <ExternalLink size={14} />
-                        </a>
+                        <div className="btn-action secondary" style={{ opacity: 0.6, cursor: 'not-allowed' }}>
+                            Coming Soon <ExternalLink size={14} />
+                        </div>
                     </div>
 
                     {/* Developer Card */}
@@ -344,7 +344,7 @@ function App() {
                     <div className="posts-grid">
 
                         {/* Previous 56. Post (Optional or remove since it's in hero) */}
-                        <a href="https://rubin-chat.vercel.app/" target="_blank" className="post-card large">
+                        <div className="post-card large" style={{ cursor: 'default' }}>
                             <div className="post-card-bg">
                                 <img src="/blog/56.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="56." />
                             </div>
@@ -352,7 +352,7 @@ function App() {
                                 <div className="post-title" style={{ fontSize: '24px' }}>56.</div>
                                 <div className="post-date">Startup • Ongoing</div>
                             </div>
-                        </a>
+                        </div>
 
                         {/* Large Featured Card: Article */}
                         <a href="#" onClick={(e) => handleArticleClick(e, 'reflections')} className="post-card">
