@@ -263,7 +263,7 @@ function App() {
                                 lineHeight: '1.6',
                                 fontFamily: 'var(--font-serif)'
                             }}>
-                                I love food, pushing myself, and taking on new adventures. Building Rubin to shape how musicians interact with AI.
+                                I love food, pushing myself, and taking on new adventures. Building 56. to shape how musicians interact with AI.
                             </div>
                         </div>
 
@@ -293,7 +293,7 @@ function App() {
                     <div className="bento-card">
                         <div>
                             <div className="card-title">Founder</div>
-                            <div className="card-subtitle">Rubin</div>
+                            <div className="card-subtitle">56.</div>
                             <div style={{ marginTop: '8px', color: 'var(--text-secondary)', fontSize: '12px' }}>
                                 The future of Music AI.
                             </div>
@@ -343,7 +343,7 @@ function App() {
 
                     <div className="posts-grid">
 
-                        {/* Previous Rubin Chat Post (Optional or remove since it's in hero) */}
+                        {/* Previous 56. Post (Optional or remove since it's in hero) */}
                         <a href="https://rubin-chat.vercel.app/" target="_blank" className="post-card large">
                             <div className="post-card-bg">
                                 <img src="/blog/56.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="56." />

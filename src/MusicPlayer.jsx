@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { 
-  Play, 
-  Pause, 
-  SkipForward, 
-  SkipBack, 
-  Volume2, 
+import {
+  Play,
+  Pause,
+  SkipForward,
+  SkipBack,
+  Volume2,
   VolumeX,
   Shuffle,
   Repeat,
@@ -94,7 +94,7 @@ export default function MusicPlayer({ onBack }) {
   const [repeat, setRepeat] = useState(0) // 0: off, 1: all, 2: one
   const [playlist, setPlaylist] = useState(TRACKS)
   const [trackDurations, setTrackDurations] = useState({}) // Store durations for all tracks
-  
+
   const audioRef = useRef(null)
   const progressRef = useRef(null)
 
@@ -104,12 +104,12 @@ export default function MusicPlayer({ onBack }) {
   useEffect(() => {
     const loadDurations = async () => {
       const durations = {}
-      
+
       for (const track of TRACKS) {
         try {
           const audio = new Audio()
           audio.preload = 'metadata'
-          
+
           await new Promise((resolve) => {
             audio.onloadedmetadata = () => {
               durations[track.id] = audio.duration
@@ -125,10 +125,10 @@ export default function MusicPlayer({ onBack }) {
           durations[track.id] = null
         }
       }
-      
+
       setTrackDurations(durations)
     }
-    
+
     loadDurations()
   }, [])
 
@@ -207,7 +207,7 @@ export default function MusicPlayer({ onBack }) {
   const handleProgressClick = (e) => {
     const audio = audioRef.current
     if (!audio || !progressRef.current) return
-    
+
     const rect = progressRef.current.getBoundingClientRect()
     const percent = (e.clientX - rect.left) / rect.width
     audio.currentTime = percent * duration
@@ -246,13 +246,13 @@ export default function MusicPlayer({ onBack }) {
         <div>
           <h1 className="music-player-title">My Music</h1>
           <p className="music-player-description">
-            Over 800 projects spanning Logic Pro, FL Studio, and Ableton Live. I started producing in 2017 with no prior 
-            musical experience, fully self-taught through the internet. Exploring multiple DAWs and hundreds of plugins, 
-            from instruments to effects, experimenting with different tools and workflows. Hundreds of plugins, millions 
-            of minutes listened, and hundreds of podcasts and videos on production and my favorite artists shaped my 
-            understanding of music. This is what I'd do when I got home, putting off homework. After graduating high school, 
-            I read Steve Jobs' biography the summer before LMU and knew I wanted to transfer and pursue something bigger. 
-            That led me to Michigan, studying Computer Science, and now I'm building Rubin to build music AI the right way.
+            Over 800 projects spanning Logic Pro, FL Studio, and Ableton Live. I started producing in 2017 with no prior
+            musical experience, fully self-taught through the internet. Exploring multiple DAWs and hundreds of plugins,
+            from instruments to effects, experimenting with different tools and workflows. Hundreds of plugins, millions
+            of minutes listened, and hundreds of podcasts and videos on production and my favorite artists shaped my
+            understanding of music. This is what I'd do when I got home, putting off homework. After graduating high school,
+            I read Steve Jobs' biography the summer before LMU and knew I wanted to transfer and pursue something bigger.
+            That led me to Michigan, studying Computer Science, and now I'm building 56. to build music AI the right way.
           </p>
         </div>
       </div>
