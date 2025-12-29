@@ -42,7 +42,7 @@ const ARTICLES = {
         title: "Reflections on AI and Music Creation",
         date: "Coming Soon",
         content: `
-      <p style="text-align: center; font-style: italic; color: var(--text-secondary); padding: 60px 0;">{in progress}</p>
+
     `
     }
 }
@@ -345,9 +345,11 @@ function App() {
 
                         {/* Previous Rubin Chat Post (Optional or remove since it's in hero) */}
                         <a href="https://rubin-chat.vercel.app/" target="_blank" className="post-card large">
-                            <div className="post-card-bg" style={{ background: '#4A4A4A' }} />
+                            <div className="post-card-bg">
+                                <img src="/blog/56.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="56." />
+                            </div>
                             <div className="post-content">
-                                <div className="post-title" style={{ fontSize: '24px' }}>Rubin Chat</div>
+                                <div className="post-title" style={{ fontSize: '24px' }}>56.</div>
                                 <div className="post-date">Startup • Ongoing</div>
                             </div>
                         </a>
