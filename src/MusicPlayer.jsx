@@ -258,53 +258,20 @@ export default function MusicPlayer({ onBack }) {
       </div>
 
       <div className="music-player-content">
-        {/* Top Controls */}
-        <div className="top-controls-bar">
+        {/* Simplified Controls - Just Shuffle Play */}
+        <div className="simple-controls-center">
           <button
-            className={`shuffle-btn-top ${shuffle ? 'active' : ''}`}
+            className={`shuffle-btn-large ${shuffle ? 'active' : ''}`}
             onClick={handleShufflePlay}
             title="Shuffle and play random track"
           >
-            <Shuffle size={24} />
+            <Shuffle size={32} />
             <span>Shuffle Play</span>
           </button>
+          <p className="shuffle-description">
+            Click to start listening to a random selection from my collection of beats.
+          </p>
         </div>
-
-        {/* Track List */}
-        <div className="track-list-container">
-          <div className="track-list-header">
-            <div className="track-list-header-item" style={{ flex: '0 0 40px' }}>#</div>
-            <div className="track-list-header-item" style={{ flex: '1' }}>Title</div>
-            <div className="track-list-header-item" style={{ flex: '0 0 80px', textAlign: 'right' }}>Duration</div>
-          </div>
-          <div className="track-list">
-            {playlist.map((track, index) => (
-              <div
-                key={track.id}
-                className={`track-item ${index === currentTrackIndex ? 'active' : ''}`}
-                onClick={() => handleTrackClick(index)}
-              >
-                <div className="track-number">
-                  {index === currentTrackIndex && isPlaying ? (
-                    <div className="equalizer">
-                      <span></span><span></span><span></span>
-                    </div>
-                  ) : (
-                    index + 1
-                  )}
-                </div>
-                <div className="track-info">
-                  <div className="track-name">{track.name}</div>
-                  <div className="track-artist">{track.artist}</div>
-                </div>
-                <div className="track-duration">
-                  {trackDurations[track.id] ? formatTime(trackDurations[track.id]) : '-'}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
       </div>
 
       {/* Hidden audio element - always present */}
